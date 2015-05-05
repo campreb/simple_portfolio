@@ -1,0 +1,12 @@
+.col-xs-12.col-sm-6
+  .project-tile
+    .project-tile__thumbnail
+      = link_to project do
+        = image_tag 'http://placekitten.com/g/200/108', class: 'img-responsive'
+
+
+      / .category= project.category.humanize
+
+
+    h4.project-tile__title= link_to project.name, project
+    = simple_format project.description

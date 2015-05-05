@@ -1,14 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>PortfolioRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
 
-<%= yield %>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</body>
+    <!-- Use title if it's in the page YAML frontmatter -->
+
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "application" %>
+
+  </head>
+
+  <body>
+
+    <%= yield %>
+    <footer class='container text-center'>
+      <hr>
+      <p>&copy; <%= Date.today.year %>
+        <%= link_to 'Cameron Prebble', 'http://cameron-prebble.com' %></p>
+    </footer>
+    <%= javascript_include_tag  "application" %>
+  </body>
 </html>

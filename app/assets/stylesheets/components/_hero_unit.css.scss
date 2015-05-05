@@ -1,0 +1,48 @@
+.hero-unit {
+  background-image: image-url('background.jpg'); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.hero-unit__wrapper {
+  display: table;
+  height: 280px;
+  width: 100%;
+  padding: 30px;
+  background-color: rgba(#000, 0.7);
+}
+
+.hero-unit__content {
+  display: table-cell;
+  border: solid 1px #fff;
+  vertical-align: middle;
+  color: #fff;
+  h1 {
+    font-weight: 400;
+  }
+}
+
+.hero-unit__links {
+  position: absolute;
+  top: 45px;
+  right: 45px;
+  a {
+    color: #fff;
+  }
+}
+
+
+@media screen and (min-width: $screen-sm-min) {
+  .hero-unit__wrapper {
+    height: 360px;
+  }
+}
+
+@media screen and (min-width: $screen-md-min) {
+  .hero-unit__wrapper {
+    height: 540px;
+  }
+}

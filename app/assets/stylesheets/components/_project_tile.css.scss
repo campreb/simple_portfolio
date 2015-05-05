@@ -1,0 +1,13 @@
+.project-tile__thumbnail {
+  float: left;
+  margin-right: 15px;
+  max-width: 33%;
+}
+
+.project-tile__title {
+  margin-top: 0;
+
+  > a {
+    color: #000;
+  }
+}

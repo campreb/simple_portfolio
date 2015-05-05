@@ -1,0 +1,29 @@
+header.hero-unit.text-center
+  .hero-unit__wrapper
+    .hero-unit__content
+      .hero-unit__box
+        h1 Cameron Prebble
+        h3 Development Portfolio
+        ul.hero-unit__links.list-inline
+          li= link_to 'http://twitter.com/cameron_prebble', title: 'Twitter' do
+            = icon('twitter', '', class: 'fa-fw fa-lg')
+            span.sr-only Twitter
+          li= link_to 'https://www.linkedin.com/in/cameronprebble', title: 'LinkedIn' do
+            = icon('linkedin', '', class: 'fa-fw fa-lg')
+            span.sr-only LinkedIn
+          li= link_to 'https://github.com/campreb', title: 'Github' do
+            = icon('github', '', class: 'fa-fw fa-lg')
+            span.sr-only Github
+
+
+.container
+  .row
+    - @projects.each_with_index do |project, index|
+      = render project
+      .visible-xs
+        .clearfix
+        hr
+      - if index % 2 == 1
+        .hidden-xs
+          .clearfix
+          hr
