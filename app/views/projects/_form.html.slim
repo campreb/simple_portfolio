@@ -1,4 +1,4 @@
-= nested_form_for(@project) do |f|
+= nested_form_for(@project, html: {class: 'form-horizontal'}) do |f|
   - if @project.errors.any?
     #error_explanation
       h2 #{pluralize(@project.errors.count, "error")} prohibited this project from being saved:
@@ -7,52 +7,69 @@
         - @project.errors.full_messages.each do |message|
           li= message
 
-  .field
-    == f.label :name
-    == f.text_field :name
+  .form-group
+    == f.label :name, class: 'control-label col-sm-3'
+    .col-sm-6
+      == f.text_field :name, class: 'form-control'
 
-  .field
-    == f.label :category
-    == f.text_field :category
+  .form-group
+    == f.label :category, class: 'control-label col-sm-3'
+    .col-sm-6
+      == f.text_field :category, class: 'form-control'
 
-  .field
-    == f.label :client
-    == f.text_field :client
+  .form-group
+    == f.label :client, class: 'control-label col-sm-3'
+    .col-sm-6
+      == f.text_field :client, class: 'form-control'
 
-  .field
-    == f.label :thumbnail
-    == f.file_field :thumbnail
+  .form-group
+    == f.label :thumbnail, class: 'control-label col-sm-3'
+    .col-sm-6
+      == f.file_field :thumbnail
 
-  .field
-    == f.label :url
-    == f.text_field :url
+  .form-group
+    == f.label :url, class: 'control-label col-sm-3'
+    .col-sm-6
+      == f.text_field :url, class: 'form-control'
 
-  .field
-    == f.label :github
-    == f.text_field :github
+  .form-group
+    == f.label :github, class: 'control-label col-sm-3'
+    .col-sm-6
+      == f.text_field :github, class: 'form-control'
 
-  .field
-    == f.label :description
-    == f.text_area :description
+  .form-group
+    == f.label :description, class: 'control-label col-sm-3'
+    .col-sm-9
+      == f.text_area :description, rows: 5, class: 'form-control'
 
-  .field
-    == f.label :body
-    == f.text_area :body
+  .form-group
+    == f.label :body, class: 'control-label col-sm-3'
+    .col-sm-9
+      == f.text_area :body, rows: 10, class: 'form-control'
 
-  .field
-    == f.label :tag_list
-    == f.text_field :tag_list
+  .form-group
+    == f.label :tag_list, class: 'control-label col-sm-3'
+    .col-sm-6
+      == f.text_field :tag_list, value: f.object.tag_list.join(', '), class: 'form-control'
 
-  - f.fields_for :screenshots do |ff|
-    .field
-      == ff.link_to_remove '&times;'
-      == ff.label :image
-      == ff.file_field :image
-      == ff.label :title
-      == ff.text_field :title
+  .form-group
+    label.control-label.col-sm-3 Screenshots
+    .col-sm-9
+      = f.fields_for :screenshots, @project.screenshots do |ff|
+        .well.well-sm
+          == ff.link_to_remove '&times;'.html_safe, class: 'close'
+          .form-group
+            == ff.label :image, class: 'control-label col-sm-2'
+            .col-sm-8
+              == ff.file_field :image
+          .form-group
+            == ff.label :title, class: 'control-label col-sm-2'
+            .col-sm-8
+              == ff.text_field :title,  class: 'form-control'
 
-  = f.link_to_add "Add a screenshot", :screenshots
+      = f.link_to_add "Add a screenshot", :screenshots, class: "btn btn-default btn-xs"
 
 
-  .actions
-    == f.submit
+  .form-group
+    .col-sm-offset-3.col-sm-6
+      == f.submit 'Save', class: 'btn btn-primary'
