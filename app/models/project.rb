@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  validates :name, :url, :category, presence: true
+  has_many :screenshots
 
   acts_as_taggable
 
@@ -8,4 +8,8 @@ class Project < ActiveRecord::Base
     small_2x:'372x200#',
     header: '1440x'}
   validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\Z/
+
+  validates :name, :url, :category, presence: true
+
+  accepts_nested_attributes_for :screenshots, allow_destroy: true
 end

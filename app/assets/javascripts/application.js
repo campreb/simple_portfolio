@@ -13,4 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require jquery_nested_form
+//= require magnific-popup
+
+$(document).on('ready', function(){
+  $('.gallery-thumbnails').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery: { enabled: true },
+    image: { cursor: null }
+  });
+});

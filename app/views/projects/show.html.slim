@@ -14,7 +14,13 @@ article
     .row
       .col-sm-8
         == @project.formatted_body
-        / == render_partial 'layouts/project_gallery' if @project.screenshots.present?
+        hr
+        .row.gallery-thumbnails
+          - @project.screenshots.each_with_index do |screen, index|
+            .col-xs-6.col-sm-4
+              = link_to(image_path(screen.image.url(:big)), class: 'thumbnail', title: screen.title) do
+                = image_tag screen.image.url(:small_2x)
+
 
       .col-sm-3.col-sm-offset-1
         - if @project.client.present?

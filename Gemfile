@@ -25,6 +25,8 @@ gem 'kramdown'
 gem 'draper'
 
 gem 'acts-as-taggable-on', '~> 3.4'
+gem "nested_form"
+
 
 group :development, :test do
   gem 'byebug'
