@@ -19,7 +19,10 @@ gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
+gem "paperclip", "~> 4.2"
+gem 'kramdown'
 
+gem 'draper'
 
 group :development, :test do
   gem 'byebug'

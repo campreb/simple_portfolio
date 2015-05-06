@@ -1,0 +1,32 @@
+header.container.text-center
+  h1 Cameron Prebble
+  h3= link_to 'Development Portfolio', '/'
+article
+  header.project-header
+    .project-header__backdrop(style="background-image:url(#{image_path(@project.thumbnail.url(:header))})")
+    .project-header__content.text-center
+      h2= @project.name
+      hr
+      ul.project-header__project-links.list-unstyled
+        == @project.url_button
+        == @project.github_button
+  .container
+    .row
+      .col-sm-8
+        == @project.formatted_body
+        / == render_partial 'layouts/project_gallery' if @project.screenshots.present?
+
+      .col-sm-3.col-sm-offset-1
+        - if @project.client.present?
+          section
+            h5 Client
+            p = @project.client
+            hr
+
+        / - if @project.tags.present?
+        /   section
+        /     h5 Tags
+        /     ul.list-inline
+        /       - @project.tags.each do |tag|
+        /         li = tag
+        /     hr
