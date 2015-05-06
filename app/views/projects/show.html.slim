@@ -14,7 +14,7 @@
           == @project.github_button
     .container
       .row
-        .col-sm-8
+        .col-sm-9
           == @project.formatted_body
           hr
           .row.gallery-thumbnails
@@ -24,7 +24,7 @@
                   = tag :img, srcset: screen.thumbnail_srcset
 
 
-        .col-sm-3.col-sm-offset-1
+        .col-sm-3
           - if @project.client.present?
             section
               h5 Client
