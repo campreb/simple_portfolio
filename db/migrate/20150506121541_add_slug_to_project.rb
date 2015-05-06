@@ -3,5 +3,7 @@ class AddSlugToProject < ActiveRecord::Migration
     change_table :projects do |t|
       t.string :slug
     end
+
+    add_index :projects, :slug, unique: true
   end
 end
