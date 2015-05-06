@@ -23,7 +23,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
 gem "paperclip", "~> 4.2"
-gem 'paperclip-compression'
+gem "paperclip-optimizer"
 gem 'kramdown'
 
 gem 'draper'
@@ -52,4 +52,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem "image_optim_bin"
+end
