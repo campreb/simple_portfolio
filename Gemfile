@@ -38,3 +38,5 @@ group :development, :test do
   gem 'faker'
   gem 'spring-commands-rspec'
 end
+
+gem 'rails_12factor', group: :production
