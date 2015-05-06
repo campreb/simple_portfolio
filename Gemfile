@@ -29,7 +29,7 @@ gem 'draper'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem "nested_form"
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'byebug'
