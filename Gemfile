@@ -31,6 +31,8 @@ gem "nested_form"
 
 gem 'fog-aws'
 
+gem 'friendly_id', '~> 5.1.0'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

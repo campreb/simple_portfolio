@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  extend FriendlyId
   has_many :screenshots
 
   acts_as_taggable
@@ -12,4 +13,6 @@ class Project < ActiveRecord::Base
   validates :name, :url, :category, presence: true
 
   accepts_nested_attributes_for :screenshots, allow_destroy: true
+
+  friendly_id :name, use: [:slugged, :history]
 end

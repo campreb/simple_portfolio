@@ -106,6 +106,8 @@ GEM
     font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -244,6 +246,7 @@ DEPENDENCIES
   faker
   fog-aws
   font-awesome-sass
+  friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   kramdown

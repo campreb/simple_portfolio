@@ -10,6 +10,10 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    if request.path != project_path(@project)
+      return redirect_to @project, :status => :moved_permanently
+    end
+    
     @project = @project.decorate
   end
 
@@ -65,7 +69,7 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:id])
+      @project = Project.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
