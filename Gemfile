@@ -23,6 +23,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
 gem "paperclip", "~> 4.2"
+gem 'paperclip-compression'
 gem 'kramdown'
 
 gem 'draper'

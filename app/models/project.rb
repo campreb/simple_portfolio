@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
   has_attached_file :thumbnail, styles: {
     small: '186x100#',
     small_2x:'372x200#',
-    header: '1440x'}
+    header: '1440x'}, processors: [:thumbnail, :compression]
   validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\Z/
 
   validates :name, :url, :category, presence: true
