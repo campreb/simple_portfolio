@@ -24,6 +24,8 @@ gem 'kramdown'
 
 gem 'draper'
 
+gem 'acts-as-taggable-on', '~> 3.4'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

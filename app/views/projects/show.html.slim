@@ -23,10 +23,10 @@ article
             p = @project.client
             hr
 
-        / - if @project.tags.present?
-        /   section
-        /     h5 Tags
-        /     ul.list-inline
-        /       - @project.tags.each do |tag|
-        /         li = tag
-        /     hr
+        - if @project.tags.any?
+          section
+            h5 Tags
+            ul.list-inline
+              - @project.tags.each do |tag|
+                li = tag
+            hr
