@@ -20,7 +20,11 @@ class ProjectDecorator < Draper::Decorator
   end
 
   def formatted_body
-    Kramdown::Document.new(body).to_html
+    if body.blank?
+      h.simple_format description
+    else
+      Kramdown::Document.new(body).to_html
+    end
   end
 
   def thumbnail_srcset
