@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.order(:name)
   end
 
   # GET /projects/1
@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
     if request.path != project_path(@project)
       return redirect_to @project, :status => :moved_permanently
     end
-    
+
     @project = @project.decorate
   end
 
