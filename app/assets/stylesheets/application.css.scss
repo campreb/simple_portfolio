@@ -3,8 +3,9 @@
 $headings-font-family: 'Merriweather', serif;
 $headings-font-weight: 300;
 
-$brand-primary: #63c6ae;
+$brand-primary: #a37c79;
 $brand-info: #666;
+$hero-text: #f2f1f2;
 
 $carousel-indicator-border-color: $brand-primary;
 $carousel-indicator-active-bg: $carousel-indicator-border-color;
@@ -23,47 +24,7 @@ $thumbnail-border-radius: 0;
 @import 'font-awesome';
 @import "magnific-popup";
 
+@import 'components/main_header';
 @import 'components/hero_unit';
 @import 'components/project_header';
 @import 'components/project_tile';
-
-.thumbnail > .flush-thumb {
-  margin-top: -$thumbnail-padding;
-  margin-left: -$thumbnail-padding;
-  margin-right: -$thumbnail-padding;
-  display: block;
-  position: relative;
-
-  > img {
-    width: 100%;
-  }
-
-  > div.category {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: rgba(#000, 0.5);
-    color: #fff;
-    font-size: 10px;
-    padding: 2px 5px;
-    text-transform: uppercase;
-  }
-}
-
-.external-link-item {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.carousel-control .fa-chevron-left,
-.carousel-control .fa-chevron-right {
-  position: absolute;
-  top: 50%;
-  z-index: 5;
-  display: inline-block;
-  width:  20px;
-  height: 20px;
-  margin-top: -10px;
-}

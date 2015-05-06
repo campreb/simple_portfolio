@@ -1,9 +1,10 @@
 - cache [project, :item] do
+  - project = project.decorate
   .col-xs-12.col-sm-6
     .project-tile
       .project-tile__thumbnail
         = link_to project do
-          = image_tag project.thumbnail.url(:small_2x), class: 'img-responsive'
+          = tag :img, srcset: project.thumbnail_srcset, class: 'img-responsive'
 
       h4.project-tile__title= link_to project.name, project
       = simple_format project.description

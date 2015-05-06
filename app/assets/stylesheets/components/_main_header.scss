@@ -1,0 +1,10 @@
+.main-header {
+  a:hover {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor 0, currentColor 100%);
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    background-position: 0 90%;
+    text-shadow: 3px 0 #fff, 2px 0 #fff, 1px 0 #fff, -1px 0 #fff, -2px 0 #fff, -3px 0 #fff;
+  }
+}

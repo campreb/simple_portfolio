@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require jquery_nested_form
 //= require magnific-popup
+//= require picturefill
 
 $(document).on('ready', function(){
   $('.gallery-thumbnails').magnificPopup({

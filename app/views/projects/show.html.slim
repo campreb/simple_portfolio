@@ -1,6 +1,6 @@
 - content_for :title, @project.name
 - cache [@project, :show] do
-  header.container.text-center
+  header.text-center.main-header
     h1 Cameron Prebble
     h3= link_to 'Development Portfolio', '/'
   article
@@ -18,10 +18,10 @@
           == @project.formatted_body
           hr
           .row.gallery-thumbnails
-            - @project.screenshots.each_with_index do |screen, index|
+            - @project.screenshots.decorate.each_with_index do |screen, index|
               .col-xs-6.col-sm-4
                 = link_to(image_path(screen.image.url(:big)), class: 'thumbnail', title: screen.title) do
-                  = image_tag screen.image.url(:small_2x)
+                  = tag :img, srcset: screen.thumbnail_srcset
 
 
         .col-sm-3.col-sm-offset-1

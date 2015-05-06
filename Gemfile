@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-magnific-popup'
+  gem 'rails-assets-picturefill'
 end
 
 gem 'jquery-rails'
