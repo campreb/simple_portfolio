@@ -1,40 +1,40 @@
 - content_for :title, @project.name
-
-header.container.text-center
-  h1 Cameron Prebble
-  h3= link_to 'Development Portfolio', '/'
-article
-  header.project-header
-    .project-header__backdrop(style="background-image:url(#{image_path(@project.thumbnail.url(:header))})")
-    .project-header__content.text-center
-      h2= @project.name
-      hr
-      ul.project-header__project-links.list-unstyled
-        == @project.url_button
-        == @project.github_button
-  .container
-    .row
-      .col-sm-8
-        == @project.formatted_body
+- cache [@project, :show] do
+  header.container.text-center
+    h1 Cameron Prebble
+    h3= link_to 'Development Portfolio', '/'
+  article
+    header.project-header
+      .project-header__backdrop(style="background-image:url(#{image_path(@project.thumbnail.url(:header))})")
+      .project-header__content.text-center
+        h2= @project.name
         hr
-        .row.gallery-thumbnails
-          - @project.screenshots.each_with_index do |screen, index|
-            .col-xs-6.col-sm-4
-              = link_to(image_path(screen.image.url(:big)), class: 'thumbnail', title: screen.title) do
-                = image_tag screen.image.url(:small_2x)
+        ul.project-header__project-links.list-unstyled
+          == @project.url_button
+          == @project.github_button
+    .container
+      .row
+        .col-sm-8
+          == @project.formatted_body
+          hr
+          .row.gallery-thumbnails
+            - @project.screenshots.each_with_index do |screen, index|
+              .col-xs-6.col-sm-4
+                = link_to(image_path(screen.image.url(:big)), class: 'thumbnail', title: screen.title) do
+                  = image_tag screen.image.url(:small_2x)
 
 
-      .col-sm-3.col-sm-offset-1
-        - if @project.client.present?
-          section
-            h5 Client
-            p = @project.client
-            hr
+        .col-sm-3.col-sm-offset-1
+          - if @project.client.present?
+            section
+              h5 Client
+              p = @project.client
+              hr
 
-        - if @project.tags.any?
-          section
-            h5 Tags
-            ul.list-inline
-              - @project.tags.each do |tag|
-                li = tag
-            hr
+          - if @project.tags.any?
+            section
+              h5 Tags
+              ul.list-inline
+                - @project.tags.each do |tag|
+                  li = tag
+              hr

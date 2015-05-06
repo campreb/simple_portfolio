@@ -1,5 +1,5 @@
 class Screenshot < ActiveRecord::Base
-  belongs_to :project
+  belongs_to :project, touch: true
 
   has_attached_file :image, styles: {
     small: '186x100#',

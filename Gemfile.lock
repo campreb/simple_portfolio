@@ -68,6 +68,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
+    dalli (2.7.4)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     draper (2.1.0)
@@ -241,6 +242,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
+  dalli
   draper
   factory_girl_rails
   faker

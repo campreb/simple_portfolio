@@ -1,8 +1,9 @@
-.col-xs-12.col-sm-6
-  .project-tile
-    .project-tile__thumbnail
-      = link_to project do
-        = image_tag project.thumbnail.url(:small_2x), class: 'img-responsive'
+- cache [project, :item] do
+  .col-xs-12.col-sm-6
+    .project-tile
+      .project-tile__thumbnail
+        = link_to project do
+          = image_tag project.thumbnail.url(:small_2x), class: 'img-responsive'
 
-    h4.project-tile__title= link_to project.name, project
-    = simple_format project.description
+      h4.project-tile__title= link_to project.name, project
+      = simple_format project.description

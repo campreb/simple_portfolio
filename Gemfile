@@ -30,6 +30,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem "nested_form"
 
 gem 'fog-aws'
+gem 'dalli'
 
 gem 'friendly_id', '~> 5.1.0'
 
