@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-  http_basic_authenticate_with name: ENV['AUTH_USERNAME'], password: ENV['AUTH_PASSWORD'], except: [:index, :show]
+  http_basic_authenticate_with name: ENV['AUTH_USERNAME'],
+    password: ENV['AUTH_PASSWORD'], except: [:index, :show], if: ->{ Rails.env.production? }
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
