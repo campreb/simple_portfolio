@@ -28,6 +28,11 @@ RSpec.describe ProjectsController, type: :controller do
     it { expect(assigns(:projects)).to include(project) }
   end
 
+  describe 'GET #summary' do
+    before { get :summary }
+    it { expect(assigns(:projects)).to include(project) }
+  end
+
   describe "GET #show" do
     before { get :show, id: project }
     it { expect(assigns(:project)).to eq(project) }
