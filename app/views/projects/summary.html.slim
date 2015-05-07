@@ -5,6 +5,7 @@
     thead
       tr
         th Name
+        th Role
         th Thumbnail?
         th Description?
         th Body?
@@ -14,6 +15,7 @@
       - @projects.each do |project|
         tr
           th= link_to project.name, project
+          td= project.role_title
           td= tick_or_cross(project.thumbnail.present?)
           td= tick_or_cross(project.description.present?)
           td= tick_or_cross(project.body.present?)

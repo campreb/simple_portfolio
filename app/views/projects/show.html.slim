@@ -28,7 +28,13 @@
           - if @project.client.present?
             section
               h5 Client
-              p = @project.client
+              p= @project.client
+              hr
+
+          - if @project.role_title.present?
+            section
+              h5 Role
+              p= @project.role_title
               hr
 
           - if @project.tags.any?
