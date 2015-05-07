@@ -1,0 +1,24 @@
+.container
+  h2 Project Summary
+
+  table.table.table-bordered.table-condensed
+    thead
+      tr
+        th Name
+        th Thumbnail?
+        th Description?
+        th Body?
+        th Screenshots
+        th
+    tbody
+      - @projects.each do |project|
+        tr
+          th= link_to project.name, project
+          td= tick_or_cross(project.thumbnail.present?)
+          td= tick_or_cross(project.description.present?)
+          td= tick_or_cross(project.body.present?)
+          td= project.screenshots.count
+          td
+            = link_to 'Edit', edit_project_path(project), class: 'btn btn-default btn-xs'
+            | &nbsp;
+            = link_to 'Delete', project_path(project), method: :delete, class: 'btn btn-default btn-xs'

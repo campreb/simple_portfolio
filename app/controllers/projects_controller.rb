@@ -8,6 +8,10 @@ class ProjectsController < ApplicationController
     @projects = Project.order(:name)
   end
 
+  def summary
+    @projects = Project.order(created_at: :desc)
+  end
+
   # GET /projects/1
   # GET /projects/1.json
   def show
