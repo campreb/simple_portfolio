@@ -22,10 +22,8 @@ header.hero-unit.text-center
   .row
     - @projects.each_with_index do |project, index|
       = render project
-      .visible-xs
-        .clearfix
+      .visible-xs.col-xs-12
         hr
       - if index % 2 == 1
-        .hidden-xs
-          .clearfix
+        .hidden-xs.col-xs-12
           hr

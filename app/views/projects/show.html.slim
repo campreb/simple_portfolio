@@ -42,5 +42,5 @@
               h5 Tags
               ul.list-inline
                 - @project.tags.each do |tag|
-                  li = tag
+                  li= link_to tag, tag_path(CGI.escape(tag.to_s))
               hr
