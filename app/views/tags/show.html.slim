@@ -1,0 +1,17 @@
+- content_for :title, "#{@tag} Projects"
+
+header.text-center.main-header
+  h1 Cameron Prebble
+  h3= link_to 'Development Portfolio', '/'
+
+.container
+  .page-header.text-center
+    h2 #{@tag} Projects
+  .row
+    - @projects.each_with_index do |project, index|
+      = render project
+      .visible-xs.col-xs-12
+        hr
+      - if index % 2 == 1
+        .hidden-xs.col-xs-12
+          hr

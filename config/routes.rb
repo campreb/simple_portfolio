@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :projects do
     get 'summary', on: :collection
   end
+
+  get 'tags/:tag' => 'tags#show', as: 'tag'
 end
